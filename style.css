@@ -1,0 +1,119 @@
+/* Smooth dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image hover effect */
+.slider-img {
+  height: 600px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.slider-img:hover {
+  transform: scale(1.00);
+}
+
+/* Footer Social Icons hover */
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+
+/* Service Cards Overlay */
+/* Service card styles */
+.service-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-box .label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-weight: 600;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
+
+
+/* Service Category Card Styling */
+.category-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-card .material-icons {
+  font-size: 48px;
+  color: #0d6efd;
+}
+
+.category-card h5 {
+  font-weight: 600;
+  color: #333;
+}
+
+.category-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Optional: Paragraph Styling */
+section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Industry Icon Styling */
+.industry-icon {
+  font-size: 48px;
+  color: #0d6efd;
+  transition: transform 0.3s ease;
+}
+
+.industry-icon:hover {
+  transform: scale(1.2);
+  color: #063d99;
+}
+
+h6 {
+  font-weight: 600;
+  color: #333;
+}
+
+footer .social-icons a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+

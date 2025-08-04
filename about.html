@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscat International Business (MIB)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--primary) !important;
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img {
+            transition: all 0.3s;
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 40px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            color: #777;
+            font-size: 1.1rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .industry-card {
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .industry-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .industry-icon {
+            font-size: 40px;
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark);
+        }
+        
+        footer a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .btn-outline-primary {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary) !important;
+        }
+        
+        .text-secondary {
+            color: var(--secondary) !important;
+        }
+        
+        .bg-accent {
+            background-color: var(--accent) !important;
+        }
+        
+        .text-accent {
+            color: var(--accent) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://thumbs.dreamstime.com/b/mib-logo-letter-design-initials-linked-circle-uppercase-monogram-typography-technology-business-real-estate-brand-393871776.jpg" alt="MIB Logo" height="50" class="me-2">
+                <span class="d-none d-lg-inline-block">Muscat International Business</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cleaning.html">Cleaning Services</a></li>
+                            <li><a class="dropdown-item" href="landscaping.html">Landscaping</a></li>
+                            <li><a class="dropdown-item" href="wastemanagement.html">Waste Management</a></li>
+                            <li><a class="dropdown-item" href="pestmanagement.html">Pest Management</a></li>
+                            <li><a class="dropdown-item" href="maintenance.html">Maintenance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-4 fw-bold text-white mb-4">Professional Facility Management Solutions</h1>
+                    <p class="lead text-white mb-5">Delivering exceptional services across Oman with trust and professionalism since 2010</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="contactus.html" class="btn btn-primary btn-lg px-4 py-3">Get a Free Quote</a>
+                        <a href="tel:+96812345678" class="btn btn-outline-light btn-lg px-4 py-3">
+                            <i class="fas fa-phone me-2"></i> Call Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-secondary fw-bold">OUR SERVICES</span>
+                <h2 class="section-title">Comprehensive Facility Solutions</h2>
+                <p class="section-subtitle">Tailored services to meet all your facility management needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-secondary">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3>Cleaning Services</h3>
+                        <p>Professional cleaning solutions for commercial, residential, and industrial spaces with eco-friendly products.</p>
+                        <a href="cleaning.html" class="btn btn-outline-secondary mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-success">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Landscaping</h3>
+                        <p>Beautiful and sustainable landscape design, installation, and maintenance services for all property types.</p>
+                        <a href="landscaping.html" class="btn btn-outline-success mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-warning">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                        <h3>Waste Management</h3>
+                        <p>Comprehensive waste collection, recycling, and disposal solutions that comply with environmental standards.</p>
+                        <a href="wastemanagement.html" class="btn btn-outline-warning mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-danger">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Pest Management</h3>
+                        <p>Effective pest control and prevention services using safe, approved methods for all types of properties.</p>
+                        <a href="pestmanagement.html" class="btn btn-outline-danger mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-info">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Maintenance</h3>
+                        <p>Preventive and corrective maintenance services to ensure your facilities operate at peak efficiency.</p>
+                        <a href="maintenance.html" class="btn btn-outline-info mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon bg-accent">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Catering Services</h3>
+                        <p>Premium catering for corporate events, meetings, and special occasions with customizable menus.</p>
+                        <a href="#" class="btn btn-outline-accent mt-3">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg px-4">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="MIB Team" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-secondary fw-bold">ABOUT US</span>
+                    <h2 class="section-title text-start">Trusted Facility Management Partner</h2>
+                    <p class="lead">Muscat International Business (MIB) has been a leader in facility management services across Oman.</p>
+                    <p>We specialize in delivering reliable, scalable, and compliant solutions tailored to meet the operational needs of diverse industries. Our commitment to quality, integrity, and client satisfaction ensures seamless service delivery backed by experienced professionals.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-secondary me-3 mt-1"></i>
+                                <div>
+                                    <h5 class="mb-1">Certified Professionals</h5>
+                                    <p class="text-muted mb-0">Highly trained and certified staff</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-secondary me-3 mt-1"></i>
+                                <div>
+                                    <h5 class="mb-1">Quality Assurance</h5>
+                                    <p class="text-muted mb-0">Guaranteed service excellence</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-secondary me-3 mt-1"></i>
+                                <div>
+                                    <h5 class="mb-1">Advanced Equipment</h5>
+                                    <p class="text-muted mb-0">State-of-the-art tools and technology</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-secondary me-3 mt-1"></i>
+                                <div>
+                                    <h5 class="mb-1">24/7 Support</h5>
+                                    <p class="text-muted mb-0">Always available for emergencies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="about.html" class="btn btn-primary px-4">Read More</a>
+                        <a href="#" class="btn btn-outline-primary px-4">
+                            <i class="fas fa-download me-2"></i> Company Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Industries Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-secondary fw-bold">OUR CLIENTS</span>
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">We provide specialized solutions for diverse sectors</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-building fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Commercial</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-hospital fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Healthcare</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-school fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Education</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-industry fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Industrial</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-landmark fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Government</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="p-4 text-center border rounded hover-shadow">
+                        <i class="fas fa-hotel fa-3x text-secondary mb-3"></i>
+                        <h5 class="mb-0">Hospitality</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a class="d-inline-block mb-3" href="index.html">
+                        <img src="https://thumbs.dreamstime.com/b/mib-logo-letter-design-initials-linked-circle-uppercase-monogram-typography-technology-business-real-estate-brand-393871776.jpg" alt="MIB Logo" height="50">
+                    </a>
+                    <p class="mb-4">Delivering exceptional facility management services across commercial, industrial, and institutional sectors with trust and professionalism.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-secondary me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="gallery.html">Gallery</a></li>
+                        <li class="mb-2"><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="cleaning.html">Cleaning Services</a></li>
+                        <li class="mb-2"><a href="landscaping.html">Landscaping</a></li>
+                        <li class="mb-2"><a href="wastemanagement.html">Waste Management</a></li>
+                        <li class="mb-2"><a href="pestmanagement.html">Pest Management</a></li>
+                        <li class="mb-2"><a href="maintenance.html">Maintenance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt text-secondary me-2"></i> 
+                            Muscat, Oman – Al Khuwair, Building 12, Office 203
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone text-secondary me-2"></i> 
+                            +968 1234 5678
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope text-secondary me-2"></i> 
+                            info@miboman.com
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-clock text-secondary me-2"></i> 
+                            Sun-Thu: 8:00 AM - 6:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Muscat International Business. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">CR No: 1611835 | VAT No: OM12345678</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary btn-lg back-to-top rounded-circle position-fixed bottom-0 end-0 m-4 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

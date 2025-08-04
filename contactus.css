@@ -1,0 +1,88 @@
+/* Smooth dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .social-icons a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+ 
+/* Contact Section */
+.contact-section {
+  background-color: #f9fafb; /* very light grayish */
+  color: #212529; /* dark text */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.contact-section h2 {
+  color: #0d6efd; /* bright blue heading */
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.contact-section .form-label {
+  color: #212529; /* dark label text */
+}
+
+.contact-section .form-control {
+  background-color: #fff;
+  border: 1.5px solid #ced4da; /* subtle border */
+  border-radius: 6px;
+  color: #212529;
+  transition: border-color 0.3s ease;
+}
+
+.contact-section .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+  outline: none;
+}
+
+.contact-section .btn {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-section .btn:hover {
+  background-color: #084cdf;
+}
+
+.contact-section i {
+  color: #0d6efd;
+}
+
+.contact-section .text-white {
+  color: #212529 !important; /* Override white text to dark */
+}
+
+.contact-heading {
+  display: block;              /* Make it block to control width */
+  width: 500px;                /* Increase width as needed */
+  margin: 0 auto 1.5rem auto; /* Center horizontally with bottom margin */
+  padding: 0.5rem 0;          /* Remove side padding, keep vertical */
+  background-color: #e7f1ff;
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(13, 110, 253, 0.15);
+  border: 2px solid black;
+  text-align: center;         /* Center text horizontally */
+  line-height: 1.2;           /* Adjust line height for vertical balance */
+}
+
+
+
